@@ -1,3 +1,5 @@
+![Screenshot](https://raw.githubusercontent.com/namazso/atomix_clone/master/screenshot.png)
+
 ### nAtomix
 
 nAtomix is a barebones C clone of the ATARI game Atomix. It was made as a university C course homework, under approx. 3 days.
