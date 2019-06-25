@@ -1,6 +1,6 @@
 ![Screenshot](https://raw.githubusercontent.com/namazso/atomix_clone/master/screenshot.png)
 
-### nAtomix
+# nAtomix
 
 nAtomix is a barebones C clone of the ATARI game Atomix. It was made as a university C course homework, under approx. 3 days.
 
@@ -13,6 +13,10 @@ nAtomix is a barebones C clone of the ATARI game Atomix. It was made as a univer
 ## Install
 
 * Just build the Visual Studio solution with VS or nmake.
+
+## License
+
+Licensed under the MIT license, that you can read in `LICENSE`
 
 ## Known issues
 
