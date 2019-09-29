@@ -1,9 +1,10 @@
 #define _CRT_SECURE_NO_WARNINGS
 #include "json.hpp"
-#include "../src/pch.h"
-#include "../src/map.h"
+#include "../natomix/src/pch.h"
+#include "../natomix/src/map.h"
 #include <filesystem>
 #include <fstream>
+#include <iostream>
 
 // Workaround for where filesystem is in experimental namespace
 namespace std
@@ -17,10 +18,10 @@ using json = nlohmann::json;
 static std::map<std::string, std::vector<map>> s_packs;
 
 template <typename T>
-void transpose_matrix(T* dst, T* src, int n, int m)
+void transpose_matrix(T* dst, T* src, unsigned n, unsigned m)
 {
-  for(int i = 0; i < n; ++i)
-		for(int j = 0; j < m; ++j)
+  for(auto i = 0u; i < n; ++i)
+		for(auto j = 0u; j < m; ++j)
 			dst[j * n + i] = src[i * m + j];
 }
 
@@ -78,7 +79,7 @@ static void from_json(const json& j, map& m)
 	}
 }
 
-static void try_load_mapset(const std::filesystem::path& path) noexcept
+static void try_load_mapset(const std::filesystem::path& path)
 {
 	try
 	{
@@ -90,7 +91,7 @@ static void try_load_mapset(const std::filesystem::path& path) noexcept
 	}
 	catch (const std::exception& e)
 	{
-		assert(e.what());
+		std::cerr << e.what();
 	}
 }
 
